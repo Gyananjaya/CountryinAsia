@@ -1,0 +1,12 @@
+.footer{
+    margin: 20px;
+    padding: 20x;
+    background-color: black;
+}
+.styleFooter{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

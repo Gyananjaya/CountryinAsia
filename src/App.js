@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {BrowserRouter as Router,Route} from "react-router-dom"
+import Header from './component/Header';
+// import Filter from './component/Filter';
+import Referesh from './component/Referesh';
+import Countries from './component/Countries';
+import Country from './component/Country';
+import Footer from './component/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Router>
+        <Header/>
+        <Route exact path="/">
+          <Referesh/>
+          <Countries/>
+        </Route>
+        
+        <Route path="/countries/:name" children={<Country/>}>
+          
+        </Route>
+        <Footer/>
+      </Router>
     </div>
   );
 }
